@@ -4,10 +4,12 @@ import { TipModalComponent } from './tip-modal/tip-modal.component';
 import { IconComponent } from './icon/icon.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CommonRepoService } from "./common-repo.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
     ModalModule.forRoot()
   ],
   exports: [

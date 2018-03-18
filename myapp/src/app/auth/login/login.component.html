@@ -1,7 +1,15 @@
 <div class="login">
-
+<div class="chat_history">
   <div>
-
+    {{history}}
   </div>
+</div>
 
+
+
+  <input type="text"  [(ngModel)]="chat" name="name">
+
+  <button (click)="test($event)" >
+    提交
+  </button>
 </div>

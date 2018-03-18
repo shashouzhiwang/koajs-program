@@ -1,11 +1,12 @@
-const Koa = require('koa');
+
 const router = require('koa-router')();
 const fs = require('fs');
 
-function addMapping(router, mapping) {
+function addMapping(mapping) {
     for (var url in mapping) {
         if (url.startsWith('GET ')) {
             var path = url.substring(4);
+            console.log('yregd000000000000');
             router.get(path, mapping[url]);
             console.log(`register URL mapping: GET ${path}`);
         } else if (url.startsWith('POST ')) {

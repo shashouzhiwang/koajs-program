@@ -36,7 +36,7 @@ export class HttpService {
 
   private headers = new HttpHeaders({
       'Content-Type': 'application/json; charset=UTF-8',
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIxIiwic2NvcGUiOlsieHgiXSwib3JnYW5pemF0aW9uIjoiMUZyaSBEZWMgMDEgMTA6NDM6NTMgQ1NUIDIwMTciLCJleHAiOjE1MTIxMzk0MzMsImF1dGhvcml0aWVzIjpbImFkbWluIl0sImp0aSI6ImE4NjgyZDFhLTYyMjktNGY1My1iMGI3LTg1NGVmNTE4ODljMCIsImNsaWVudF9pZCI6ImFwcCJ9.98kKd0nkrDsbbfK__4vyoNHsvPVyNIOqeBl-e534bhg'
+      // 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIxIiwic2NvcGUiOlsieHgiXSwib3JnYW5pemF0aW9uIjoiMUZyaSBEZWMgMDEgMTA6NDM6NTMgQ1NUIDIwMTciLCJleHAiOjE1MTIxMzk0MzMsImF1dGhvcml0aWVzIjpbImFkbWluIl0sImp0aSI6ImE4NjgyZDFhLTYyMjktNGY1My1iMGI3LTg1NGVmNTE4ODljMCIsImNsaWVudF9pZCI6ImFwcCJ9.98kKd0nkrDsbbfK__4vyoNHsvPVyNIOqeBl-e534bhg'
   });
 
   public post(url, param) {
@@ -96,34 +96,49 @@ export class HttpService {
   //   // return this.isMock ? this.http.get(url) : this.http.put(url, param, {headers: headers || this.headers});
   // }
 
-  // public get(url, params: any = {}) {
-  //   // return this.getToken().mergeMap((token) => {
-  //   //   if(token) {
-  //   //     this.headers.set('Authorization', 'bearer '+token);
-  //   //     // this.headers.set('Authorization', 'bearer 43d6fd8b-fbb5-46ca-a5c9-41e17771a1c0');
-  //   //   }
-  //   //   if(params['urlToken']){
-  //   //     url = url + '?access_token='+token;
-  //   //     delete params['urlToken'];
-  //   //   }
-  //     if (!params['noLoading']) {
-  //         this.showLoading();
-  //     }
-  //     // this.headers.append('Authorization', 'Bearer ' + this.getToken());
-  //     return (this.isMock ? this.http.get(url, {search: this.serialize(params)})
-  //         : this.http.get(url, {headers: this.headers
-  //             , search: this.serialize(params)}))/*.catch(this.catchError())*/
-  //         // .timeoutWith(this.timeout, Observable.throw({error:'timeout'}))
-  //         .map((res) => {
-  //             if (!params['noLoading']) {
-  //                 this.hideLoading();
-  //             }
-  //             return res.json();
-  //         })
-  //         .catch(this.handleTokenInvalid.bind(this, this.get.bind(this, url, params, true)));
-  //   // });
-  //   // return this.isMock ? this.http.get(url) : this.http.get(url, {headers: this.headers});
-  // }
+  public get(url, params: any = {}) {
+    // return this.getToken().mergeMap((token) => {
+    //   if(token) {
+    //     this.headers.set('Authorization', 'bearer '+token);
+    //     // this.headers.set('Authorization', 'bearer 43d6fd8b-fbb5-46ca-a5c9-41e17771a1c0');
+    //   }
+    //   if(params['urlToken']){
+    //     url = url + '?access_token='+token;
+    //     delete params['urlToken'];
+    //   }
+    //   if (!params['noLoading']) {
+    //       this.showLoading();
+    //   }
+      // this.headers.append('Authorization', 'Bearer ' + this.getToken());
+      // return (this.isMock ? this.http.get(url, {search: this.serialize(params)})
+      //     : this.http.get(url, {headers: this.headers
+      //         , search: this.serialize(params)}))/*.catch(this.catchError())*/
+      //     // .timeoutWith(this.timeout, Observable.throw({error:'timeout'}))
+      //     .map((res) => {
+      //         if (!params['noLoading']) {
+      //             this.hideLoading();
+      //         }
+      //         return res.json();
+      //     })
+      //     .catch(this.handleTokenInvalid.bind(this, this.get.bind(this, url, params, true)));
+    // });
+    // return this.isMock ? this.http.get(url) : this.http.get(url, {headers: this.headers});
+
+    // this.http.get(url, {headers: this.headers , search: this.serialize(params)}))
+    // .map((res) => {
+    //   if (!params['noLoading']) {
+    //     this.hideLoading();
+    //   }
+    //   return res.json();
+    // })
+    //   .catch(this.handleTokenInvalid.bind(this, this.get.bind(this, url, params, true)));
+    const req = new HttpRequest("GET", url, {
+      headers: this.headers,
+      reportProgress: true
+    });
+
+    return this.HttpClient.request( req );
+  }
 
   // public delete(url) {
   //   // return this.getToken().mergeMap((token) => {

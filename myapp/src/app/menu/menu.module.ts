@@ -10,8 +10,8 @@ import { HttpModule } from "@angular/http";
 import { Config } from "../provider/config";
 import { HttpService } from "../provider/http.service";
 import { CookieService } from "angular2-cookie/core";
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { AlertModule } from 'ngx-bootstrap/alert';
+import { ModalModule } from "ngx-bootstrap/modal";
+import { AlertModule } from "ngx-bootstrap/alert";
 import { CommonRepoModule } from "../common-repo/common-repo.module";
 
 @NgModule({

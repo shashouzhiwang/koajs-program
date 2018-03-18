@@ -4,3 +4,9 @@
   background-image: url(//gw.alicdn.com/tfs/TB1ittHRFXXXXcSXFXXXXXXXXXX-2880-1280.jpg);
   background-size: cover;
 }
+
+.chat_history{
+  height: 500px;
+  border: 2px solid #333;
+  background: white;
+}

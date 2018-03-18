@@ -9,7 +9,7 @@ import { HomeComponent } from "./home/home.component";
 import { UserComponent } from "./user/user.component";
 import { Config} from "./provider/config";
 import { HttpService } from "./provider/http.service";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from "@angular/common/http";
 import { CommonRepoModule } from "./common-repo/common-repo.module";
 
 @NgModule({

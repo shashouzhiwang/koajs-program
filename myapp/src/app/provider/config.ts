@@ -32,7 +32,9 @@ export class Config {
       exportExcell: '/jixiao-user/user/exportExcell',
       importExcell: '/jixiao-user/user/importExcel',
       saveScorerTree: '/jixiao-user/user/saveScorerTree',
-      setScoringPerson: '/jixiao-user/user/findScorerTree/'
+      setScoringPerson: '/jixiao-user/user/findScorerTree/',
+      test: "/guest/api/lang_en.php?lang=en",
+      products: "/api/products",
   };
 
   MOCK_APIS = {
@@ -52,7 +54,9 @@ export class Config {
       exportExcell: 'assets/mock/exportExcell.json',
       importExcell: 'assets/mock/importExcell.json',
       saveScorerTree: 'assets/mock/saveScorerTree.json',
-      setScoringPerson: 'assets/mock/setScoringPerson.json?test='
+      setScoringPerson: 'assets/mock/setScoringPerson.json?test=',
+      test: "/guest/api/lang_en.php?lang=en",
+      products: "/api/products"
   };
 
   constructor() {
