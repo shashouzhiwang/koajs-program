@@ -9,6 +9,6 @@ export const environment = {
   // baseUrl: "http://localhost:8089"
   // baseUrl: "http://localhost:3000"
   // baseUrl: "http://47.52.145.107:3000"
-  // baseUrl: "http://47.52.145.107:8080"
-  baseUrl: "http://localhost:3000"
+  baseUrl: "http://47.52.145.107:8080"
+  // baseUrl: "http://localhost:3000"
 };
