@@ -1,0 +1,35 @@
+<!--<ion-header>-->
+  <!--<ion-navbar>-->
+    <!--<ion-title>登录</ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+
+<ion-content>
+  <div class="login-bg"></div>
+  <div class="login-head-img" data-flex="main:center cross:center">
+    <img src="../../../assets/imgs/headImg.png" alt="">
+  </div>
+  <div class="login-content">
+    <form data-flex="dir:top main:center cross:center">
+      <div data-flex="main:center cross:center" class="login-content-name">
+        <input type="number">
+      </div>
+      <div data-flex="main:center cross:center" class="login-content-password">
+        <input type="password">
+      </div>
+      <button ion-button (click)="login();">登录</button>
+      <div class="login-content-policy" data-flex="mean:box main:center">
+        <input type="checkbox"/>
+        <div>接受 <a>服务条款</a>并同意同步该账号、好友等信息。</div>
+      </div>
+    </form>
+  </div>
+</ion-content>
+<ion-footer class="login-footer">
+  <ion-toolbar>
+    <div data-flex="mean:box cross:center">
+      <div data-flex-box="1">新用户注册</div>
+      <div data-flex-box="1" data-flex="main:right">无法登录？</div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
