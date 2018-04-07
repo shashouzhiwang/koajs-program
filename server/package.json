@@ -9,17 +9,24 @@
     "koa-cors": "0.0.16",
     "koa-router": "^7.4.0",
     "mime": "^2.2.0",
+    "mysql": "^2.11.1",
     "mz": "^2.7.0",
+    "node-uuid": "^1.4.8",
     "nunjucks": "^3.1.2",
+    "sequelize": "^3.24.1",
     "socket.io": "^2.0.4",
     "ws": "^5.0.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server:dev": "SET NODE_ENV=dev&& node app.js",
+    "server:test": "SET NODE_ENV=test&& node app.js",
+    "server:prod": "SET NODE_ENV=prod&& node app.js"
   },
   "keywords": [
-    "koa"
+    "koa",
+    "sequelize",
+    "mysql"
   ],
   "author": "loki luo",
   "license": "ISC"

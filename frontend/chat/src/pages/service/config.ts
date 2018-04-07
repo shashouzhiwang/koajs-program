@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {environment} from '../../environments/environment';
 
-// declare const ENV;
+declare const ENV;
 
 @Injectable()
 export class Config {
+  public Env: string;
   // public Env = 'proxyEnv';
   // public Env = 'mockEnv';
   // public Env = 'prodEnv';
@@ -34,7 +34,8 @@ export class Config {
       saveScorerTree: '/jixiao-user/user/saveScorerTree',
       setScoringPerson: '/jixiao-user/user/findScorerTree/',
       test: "/guest/api/lang_en.php?lang=en",
-      products: "/api/products",
+      products: "api/login",
+      register: "api/register"
   };
 
   MOCK_APIS = {
@@ -56,24 +57,22 @@ export class Config {
       saveScorerTree: 'assets/mock/saveScorerTree.json',
       setScoringPerson: 'assets/mock/setScoringPerson.json?test=',
       test: "/guest/api/lang_en.php?lang=en",
-      products: "/api/products"
+      products: "api/login",
+      register: "api/register"
   };
 
   constructor() {
-    // this.Env = ENV.environment+"Env";
-    // this.Env = 'devEnv';
-    // this.Env = 'mockEnv';
-
+    this.Env = ENV;
   }
 
   public getEndpoint(name: string) {
 
-    const apis = environment.baseUrl === "" ? this.MOCK_APIS : this.DEFAULT_APIS;
-
+    const apis = this.Env["mock"] ? this.MOCK_APIS : this.DEFAULT_APIS;
+    //
     let path = apis[name];
     if (!path) {
       return this.MOCK_APIS[name];
     }
-    return environment.baseUrl + path;
+    return this.Env["baseUrl"] + path;
   }
 }

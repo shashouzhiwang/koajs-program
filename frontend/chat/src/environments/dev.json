@@ -1,0 +1,7 @@
+
+{
+"name": "'Dev Environment'",
+"production": false,
+"mock": false,
+"baseUrl": "'http://localhost:3000/'"
+}

@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http"
 import { IonicPageModule } from 'ionic-angular';
-
-import { LoginComponent } from "./login.component"
+import { RegisterComponent } from "./register.component"
 import { MemberSer } from "../member.ser"
 
 @NgModule({
   declarations: [
-    LoginComponent
+    RegisterComponent
   ],
   imports: [
     HttpClientModule,
-    IonicPageModule.forChild(LoginComponent)
+    IonicPageModule.forChild(RegisterComponent)
   ],
   entryComponents: [
-    LoginComponent
+    RegisterComponent
   ],
   providers: [
     MemberSer

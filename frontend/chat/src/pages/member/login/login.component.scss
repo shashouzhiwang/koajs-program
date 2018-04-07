@@ -1,5 +1,5 @@
 $headImgWidth: 8rem;
-app-login{
+app-login,app-register{
   .login-bg{
     background: #0D8CEF;
     height: 12rem;
@@ -57,6 +57,7 @@ app-login{
     ion-toolbar.toolbar{
       .toolbar-background{
         border: none;
+        background: white;
       }
       .toolbar-content{
         height: 100%;

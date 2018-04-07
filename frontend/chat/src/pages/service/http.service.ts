@@ -10,7 +10,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/observable/of';
 import {HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpHeaders, HttpClient} from '@angular/common/http';
 // import {CookieService} from 'angular2-cookie/core';
-import {environment} from '../../environments/environment';
+// import {environment} from '../../environments/environment';
 // import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 // import {TipModelComponent} from '../common-component/tip-model/tip-model.component';
 
@@ -29,7 +29,7 @@ export class HttpService {
   constructor(private http: Http,
               private HttpClient: HttpClient,
               public config: Config) {
-    this.isMock = environment.baseUrl === '';
+    // this.isMock = environment.baseUrl === '';
   }
 
   private headers = new HttpHeaders({

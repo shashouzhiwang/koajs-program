@@ -10,14 +10,15 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { LoginComponent } from "../pages/member/login/login.component"
-import { LoginSer } from "../pages/member/login/login.ser"
+
+import { MemberSer } from "../pages/member/member.ser"
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Config } from "../pages/provider/config"
-import { HttpService } from "../pages/provider/http.service"
+import { Config } from "../pages/service/config"
+import { HttpService } from "../pages/service/http.service"
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { HttpService } from "../pages/provider/http.service"
     SplashScreen,
     Config,
     HttpService,
-    LoginSer,
+    MemberSer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

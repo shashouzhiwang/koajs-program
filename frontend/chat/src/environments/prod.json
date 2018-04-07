@@ -1,0 +1,7 @@
+{
+  "name": "'Dev Environment'",
+  "production": true,
+  "mock": false,
+  "baseUrl": "'http://47.52.145.107:8080'"
+}
+

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpEventType, HttpResponse } from "@angular/common/http";
-import { IonicPage } from "ionic-angular"
-import { LoginSer } from "./login.ser"
+import { IonicPage, NavController } from "ionic-angular"
+import { FormBuilder, Validators, FormGroup } from "@angular/forms"
+import { MemberSer } from "../member.ser"
 
 @IonicPage({
   name: "login",
@@ -13,17 +14,26 @@ import { LoginSer } from "./login.ser"
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-
+  loginFormGroup: FormGroup;
+  userName: string;
+  pwd: string;
   constructor(
-    private loginSer: LoginSer
-  ) { }
+    private memberSer: MemberSer,
+    private navCtrl: NavController,
+    public formBuilder: FormBuilder
+  ) {
+    this.loginFormGroup = this.formBuilder.group({
+      userName: [this.userName, Validators.compose([Validators.required])],
+      pwd: [this.pwd, Validators.compose([Validators.required])],
+    })
+  }
 
   ngOnInit() {
 
   }
 
-  login() {
-    this.loginSer.findOrganizationTree().subscribe(
+  login(val) {
+    this.memberSer.findOrganizationTree(val).subscribe(
       (event) => {
         if (event.type === HttpEventType.UploadProgress) {
           // This is an upload progress event. Compute and show the % done:
@@ -34,6 +44,10 @@ export class LoginComponent implements OnInit {
         }
       },
       ()=>{})
+  }
+
+  register() {
+    this.navCtrl.push('register');
   }
 
 }

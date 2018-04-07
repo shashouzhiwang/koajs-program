@@ -12,6 +12,8 @@ const templating = require('./templating');
 
 const rest = require('./rest');
 
+const Model = require('./model');
+
 const app = new Koa();
 
 var http = require('http').createServer(app.callback());
@@ -25,7 +27,6 @@ io.on('connection', function(socket){
         console.error(msg);
     })
 });
-
 
 app.use(cors());
 
