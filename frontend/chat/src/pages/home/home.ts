@@ -11,4 +11,7 @@ export class HomePage {
 
   }
 
+  goLogin() {
+    this.navCtrl.push("login");
+  }
 }

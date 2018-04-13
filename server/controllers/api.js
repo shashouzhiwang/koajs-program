@@ -2,13 +2,9 @@ const products = require('../products');
 
 const APIError = require('../rest').APIError;
 
-module.exports = {
-    'GET /api/products': async (ctx, next) => {
-        ctx.rest({
-            products: products.getProducts()
-        });
-    },
+const User = require('../models/User');
 
+module.exports = {
     'POST /api/products': async (ctx, next) => {
         var p = products.createProduct(ctx.request.body.name, ctx.request.body.manufacturer, parseFloat(ctx.request.body.price));
         ctx.rest(p);

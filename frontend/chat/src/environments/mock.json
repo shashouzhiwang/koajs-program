@@ -1,0 +1,6 @@
+{
+  "name": "'Dev Environment'",
+  "production": false,
+  "mock": true,
+  "baseUrl": "'./'"
+}

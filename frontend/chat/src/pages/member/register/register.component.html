@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+  <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-content">
+    <form [formGroup]="registerFormGroup" data-flex="dir:top main:center cross:center">
+      <div data-flex="main:center cross:center" class="login-content-name">
+        <input name="userName" placeholder="请输入账号/手机号" formControlName="userName" type="number">
+      </div>
+      <div data-flex="main:center cross:center" class="login-content-password">
+        <input name="pwd" placeholder="请输入账号/手机号" formControlName="pwd"  type="password">
+      </div>
+      <button ion-button (click)="register(registerFormGroup.value);">注册</button>
+      <div class="login-content-policy" data-flex="mean:box main:center">
+        <input type="checkbox"/>
+        <div>接受 <a>服务条款</a>并同意同步该账号、好友等信息。</div>
+      </div>
+    </form>
+  </div>
+</ion-content>

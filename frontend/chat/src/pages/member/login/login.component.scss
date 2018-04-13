@@ -1,0 +1,72 @@
+$headImgWidth: 8rem;
+app-login,app-register{
+  .login-bg{
+    background: #0D8CEF;
+    height: 12rem;
+  }
+  .login-head-img{
+    img{
+      border: 2px solid #eee;
+      width: $headImgWidth;
+      height: $headImgWidth;
+      border-radius: $headImgWidth/2;
+      position: relative;
+      top: -$headImgWidth/2;
+    }
+  }
+  .login-content{
+    form{
+      >div{
+        width: 100%;
+        input{
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          border-bottom: 1px solid #DBDBDB;
+          outline: hidden;
+          width: 50%;
+          height: 4rem;
+        }
+        input:-webkit-autofill,input[type="number"]{
+          background-color: #fff !important;
+        }
+      }
+      button[ion-button].button{
+        margin-top: 4rem;
+        width: 50%;
+      }
+      >div.login-content-policy{
+        width: 50%;
+        input{
+          width: 2rem;
+          height: 2rem;
+        }
+        >div{
+          margin-top: 0.2rem;
+          margin-left: 0.2rem;
+          font-size: 10px;
+          color: #C9C9C9;
+          a{
+            color: #0288FB;
+          }
+        }
+      }
+    }
+  }
+  ion-footer.login-footer{
+    ion-toolbar.toolbar{
+      .toolbar-background{
+        border: none;
+        background: white;
+      }
+      .toolbar-content{
+        height: 100%;
+        padding: 0 1rem;
+        >div{
+          height: 100%;
+          color: #0288FB;
+        }
+      }
+    }
+  }
+}
